@@ -33,13 +33,10 @@ jobs:
         with:
           start: npm start
           wait-on: http://localhost:3000
-          browser: chrome
+          browser: Chrome
 
       # Deploy to Netlify manually using CLI
-      - name: Deploy to Netlify
-        run: |
-          npm install -g netlify-cli
-          netlify deploy --prod --dir=build
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      -  name: Deploy to Vercel
+         project Name: fakestore 
+          site_url: https://fakestore-ochre.vercel.app/ 
+          
